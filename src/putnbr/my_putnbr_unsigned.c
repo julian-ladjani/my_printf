@@ -1,0 +1,73 @@
+/*
+** my_putnbr.c for my_putnbr in /home/julian-ladjani/delivery/PSU/my_printf/PSU_2021_my_printf_bootstrap
+** 
+** Made by julian ladjani
+** Login   <julian.ladjani@epitech.net>
+** 
+** Started on  Mon Nov  7 15:49:41 2016 julian ladjani
+** Last update Mon Nov  7 23:48:45 2016 julian ladjani
+*/
+
+char	*my_putnbru(unsigned int nb)
+{
+  int	i;
+  char	*result;
+
+  result = malloc(sizeof(nb) * sizeof(char) + 1);
+  i = -1;
+  while (nb > 0)
+    {
+      result[++i] = ((nb % 10) + 48);
+      nb /= 10;
+    }
+  my_revstr(result);
+  return(result);
+}
+
+char	*my_putnbrulong(unsigned long nb)
+{
+  int	i;
+  char	*result;
+
+  result = malloc(sizeof(nb) * sizeof(char) + 1);
+  i = -1;
+  while (nb > 0)
+    {
+      result[++i] = ((nb % 10) + 48);
+      nb /= 10;
+    }
+  my_revstr(result);
+  return(result);
+}
+
+char	*my_putnbrushort(unsigned short nb)
+{
+  int	i;
+  char	*result;
+
+  result = malloc(sizeof(nb) * sizeof(char) + 1);
+  i = -1;
+  while (nb > 0)
+    {
+      result[++i] = ((nb % 10) + 48);
+      nb /= 10;
+    }
+  my_revstr(result);
+  return(result);
+}
+
+char	*my_putnbrulonglong(unsigned long long nb)
+{
+  int	i;
+  char	*result;
+
+  result = malloc(sizeof(nb) * sizeof(char) + 1);
+  i = -1;
+  while (nb > 0)
+    {
+      result[++i] = ((nb % 10) + 48);
+      nb /= 10;
+    }
+  my_revstr(result);
+  return(result);
+}
