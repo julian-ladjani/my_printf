@@ -5,10 +5,10 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Nov  7 15:49:41 2016 julian ladjani
-** Last update Mon Nov  7 23:48:45 2016 julian ladjani
+** Last update Sat Nov 12 20:54:05 2016 julian ladjani
 */
 
-char	*my_putnbru(unsigned int nb)
+char	*my_putnbruint(unsigned int nb)
 {
   int	i;
   char	*result;

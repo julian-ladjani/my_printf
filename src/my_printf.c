@@ -5,30 +5,10 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Nov  7 22:36:45 2016 julian ladjani
-** Last update Wed Nov  9 02:24:13 2016 julian ladjani
+** Last update Sat Nov 12 20:51:05 2016 julian ladjani
 */
 
-struct		s_flags
-{
-  char		flag;
-  void		(*fonc)(va_list ap, char *flag, int *count);
-}		t_flags;
-
-t_flags		flags[] = {
-  {'d', print_int},
-  {'i', print_int},
-  {'s', print_str},
-  {'o', print_oct},
-  {'l', print_long},
-  {'x', print_hex},
-  {'X', print_hexM},
-  {'h', print_short},
-  {'c', print_char},
-  {'p', print_point},
-  {'n', print_number},
-  {'%',	print_percent},
-  {'\0', NULL},
-};
+#include "my.h"
 
 int		my_printf(char *str, ...)
 {
@@ -44,10 +24,9 @@ int		my_printf(char *str, ...)
       count[0] += my_putchar(*str);
       if (*str == '%')
 	{
-	  
 	  prepare_tempflag(str, tempflag);
 	  ap = flags[flag_search(*str)]->fonc(ap, tempflag, count);
-	  my_memset(tempflag);
+	  my_memsetprintf(tempflag, my_strlen(str));
 	}
       str++;
     }

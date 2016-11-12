@@ -5,10 +5,11 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Nov  7 15:49:41 2016 julian ladjani
-** Last update Tue Nov  8 12:46:48 2016 julian ladjani
+** Last update Sat Nov 12 20:18:31 2016 julian ladjani
 */
 
-char	*my_revstr(char *str)
+
+char	*my_revstrprintf(char *str)
 {
   int	c;
   int	c2;
@@ -30,7 +31,7 @@ char	*my_revstr(char *str)
   return (str);
 }
 
-int	my_strlen(char *str)
+int	my_strlenprintf(char *str)
 {
   int	i;
 
@@ -39,12 +40,24 @@ int	my_strlen(char *str)
   return (i);
 }
 
-void	my_putchar(char c)
+int	my_putcharprintf(char c)
 {
   write(1, &c, 1);
+  return (1);
 }
 
-void	my_putstr(char *str)
+int	my_putstrprintf(char *str)
 {
-  write(1, str, my_strlen(str));
+  write(1, str, my_strlenprintf(str));
+  return (my_strlenprintf(str));
+}
+
+char	*my_memsetprintf(char *tempflag, int lenght)
+{
+  int	i;
+
+  i = -1;
+  while (++i < lenght)
+    tempflag[i] = '0';
+  return (tempflag);
 }
