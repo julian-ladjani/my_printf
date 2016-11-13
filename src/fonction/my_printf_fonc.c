@@ -5,38 +5,38 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Nov  7 22:58:21 2016 julian ladjani
-** Last update Sat Nov 12 20:48:53 2016 julian ladjani
+** Last update Sun Nov 13 14:10:25 2016 julian ladjani
 */
 
 #include "my.h"
 
-va_arg	print_short(va_arg ap, char *flag, int *count)
+void	print_short(va_list ap, char *flag, int *count)
 {
   char	*str;
 
-  str = my_putnbrshort(va_arg(ap, short));
-  if (flag[1] == '-')
-  return (ap);
+  str = my_putnbrshort((short) va_arg(ap, int));
 }
 
-va_arg	print_int(va_arg ap, char *flag, int *count)
+void	print_int(va_list ap, char *flag, int *count)
 {
   char	*str;
 
   str = my_putnbrint(va_arg(ap, int));
-  return (ap);
 }
 
-va_arg	print_long(va_arg ap, char *flag, int *count)
+void	print_long(va_list ap, char *flag, int *count)
 {
   char	*str;
 
   str = my_putnbrlong(va_arg(ap, long));
-  return (ap);
 }
 
-va_arg	print_str(va_arg ap, char *flag, int *count)
+void	print_str(va_list ap, char *flag, int *count)
 {
-  count += my_putstrprintf(va_arg(ap, char *));
-  return (ap);
+  count[0] += my_putstrprintf(va_arg(ap, char *));
+}
+
+void	print_char(va_list ap, char *flag, int *count)
+{
+  count[0] += my_putcharprintf((char) va_arg(ap, int));
 }

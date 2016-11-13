@@ -5,9 +5,10 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Nov  7 15:49:41 2016 julian ladjani
-** Last update Sat Nov 12 20:18:31 2016 julian ladjani
+** Last update Sat Nov 12 21:27:39 2016 julian ladjani
 */
 
+#include "my.h"
 
 char	*my_revstrprintf(char *str)
 {

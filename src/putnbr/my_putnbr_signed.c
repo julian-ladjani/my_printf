@@ -5,8 +5,10 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Nov  7 15:49:41 2016 julian ladjani
-** Last update Sat Nov 12 20:52:09 2016 julian ladjani
+** Last update Sat Nov 12 23:37:51 2016 julian ladjani
 */
+
+#include "my.h"
 
 char	*my_putnbrint(int nb)
 {
@@ -29,7 +31,7 @@ char	*my_putnbrint(int nb)
     }
   if (sign == 1)
     result[++i] = '-';
-  my_revstr(result);
+  my_revstrprintf(result);
   return(result);
 }
 
@@ -54,7 +56,7 @@ char	*my_putnbrlong(long nb)
     }
   if (sign == 1)
     result[++i] = '-';
-  my_revstr(result);
+  my_revstrprintf(result);
   return(result);
 }
 
@@ -79,7 +81,7 @@ char	*my_putnbrshort(short nb)
     }
   if (sign == 1)
     result[++i] = '-';
-  my_revstr(result);
+  my_revstrprintf(result);
   return(result);
 }
 
@@ -104,6 +106,6 @@ char	*my_putnbrlonglong(long long nb)
     }
   if (sign == 1)
     result[++i] = '-';
-  my_revstr(result);
+  my_revstrprintf(result);
   return(result);
 }

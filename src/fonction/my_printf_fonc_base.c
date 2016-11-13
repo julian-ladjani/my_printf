@@ -5,8 +5,10 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Sat Nov 12 17:51:57 2016 julian ladjani
-** Last update Sat Nov 12 20:22:03 2016 julian ladjani
+** Last update Sun Nov 13 13:08:30 2016 julian ladjani
 */
+
+#include "my.h"
 
 char		*my_convertbase(char *snumber, int base)
 {
@@ -34,4 +36,19 @@ char		*my_convertbase(char *snumber, int base)
     }
   my_revstrprintf(snumber);
   return (snumber);
+}
+
+void		print_hex(va_list ap, char *flag, int *count)
+{
+  
+}
+
+void		print_hexM(va_list ap, char *flag, int *count)
+{
+
+}
+
+void		print_oct(va_list ap, char *flag, int *count)
+{
+
 }

@@ -5,8 +5,10 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Sat Nov 12 18:23:56 2016 julian ladjani
-** Last update Sat Nov 12 18:28:25 2016 julian ladjani
+** Last update Sat Nov 12 23:34:51 2016 julian ladjani
 */
+
+#include "my.h"
 
 int	my_getnbrprintf(char *str)
 {
@@ -17,7 +19,7 @@ int	my_getnbrprintf(char *str)
   number = 1;
   digit = 0;
   counter = 0;
-  while (str == '+' || *str == '-' && *str != '\0')
+  while (*str == '+' || *str == '-' && *str != '\0')
     {
       if (*str == '-')
 	number = number * -1;

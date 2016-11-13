@@ -5,8 +5,10 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Mon Nov  7 15:49:41 2016 julian ladjani
-** Last update Sat Nov 12 20:54:05 2016 julian ladjani
+** Last update Sat Nov 12 21:26:40 2016 julian ladjani
 */
+
+#include "my.h"
 
 char	*my_putnbruint(unsigned int nb)
 {
@@ -20,7 +22,7 @@ char	*my_putnbruint(unsigned int nb)
       result[++i] = ((nb % 10) + 48);
       nb /= 10;
     }
-  my_revstr(result);
+  my_revstrprintf(result);
   return(result);
 }
 
@@ -36,7 +38,7 @@ char	*my_putnbrulong(unsigned long nb)
       result[++i] = ((nb % 10) + 48);
       nb /= 10;
     }
-  my_revstr(result);
+  my_revstrprintf(result);
   return(result);
 }
 
@@ -52,7 +54,7 @@ char	*my_putnbrushort(unsigned short nb)
       result[++i] = ((nb % 10) + 48);
       nb /= 10;
     }
-  my_revstr(result);
+  my_revstrprintf(result);
   return(result);
 }
 
@@ -68,6 +70,6 @@ char	*my_putnbrulonglong(unsigned long long nb)
       result[++i] = ((nb % 10) + 48);
       nb /= 10;
     }
-  my_revstr(result);
+  my_revstrprintf(result);
   return(result);
 }

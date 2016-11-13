@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 ** 
 ** Started on  Wed Nov  9 13:23:16 2016 julian ladjani
-** Last update Sat Nov 12 21:05:44 2016 julian ladjani
+** Last update Sun Nov 13 13:43:54 2016 julian ladjani
 */
 
 #ifndef MY_H_
@@ -15,45 +15,43 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-struct	s_flags
+typedef struct	s_flags
 {
-  char	flag;
-  int	(*fonc)(va_list ap, char *flag, int *count);
-}	t_flags;
+  char		flag;
+  void		(*fonc)(va_list ap, char *flag, int *count);
+}		t_flags;
 
-t_flags	flags[] = {
-  {'d', print_int},
-  {'i', print_int},
-  {'s', print_str},
-  {'o', print_oct},
-  {'l', print_long},
-  {'x', print_hex},
-  {'X', print_hexM},
-  {'h', print_short},
-  {'c', print_char},
-  {'p', print_point},
-  {'n', print_number},
-  {'%', print_percent},
-  {'\0', NULL},
-};
+char		*my_putnbrint(int nb);
+char		*my_putnbrlong(long nb);
+char		*my_putnbrshort(short nb);
+char		*my_putnbrlonglong(long long nb);
+char		*my_putnbruint(int nb);
+char		*my_putnbrulong(long nb);
+char		*my_putnbrushort(short nb);
+char		*my_putnbrulonglong(long long nb);
+char		*my_convertbase(char *snumber, int base);
+char		*my_memsetprintf(char *tempflag, int lenght);
+char		*my_revstrprintf(char *str);
+char		*prepare_tempflag(char *str, char *tempflag);
+int		flag_search(char c);
+int		my_printf(char *str, ...);
+int		my_strlenprintf(char *str);
+int		my_putcharprintf(char c);
+int		my_getnbrprintf(char *str);
+int		my_getnbrprintfU(char *str);
+int		my_putstrprintf(char *str);
+int		my_putcharprintf(char c);
+void		print_str(va_list ap, char *flag, int *count);//
+void		print_char(va_list ap, char *flag, int *count);//
+void		print_int(va_list ap, char *flag, int *count);//
+void		print_long(va_list ap, char *flag, int *count);//
+void		print_short(va_list ap, char *flag, int *count);//
+void		print_hex(va_list ap, char *flag, int *count);//
+void		print_hexM(va_list ap, char *flag, int *count);//
+void		print_oct(va_list ap, char *flag, int *count);//
+void		print_point(va_list ap, char *flag, int *count);
+void		print_percent(va_list ap, char *flag, int *count);
+void		print_number(va_list ap, char *flag, int *count);
 
-char	*my_putnbrint(int nb);
-char	*my_putnbrlong(long nb);
-char	*my_putnbrshort(short nb);
-char	*my_putnbrlonglong(long long nb);
-char	*my_putnbruint(int nb);
-char	*my_putnbrulong(long nb);
-char	*my_putnbrushort(short nb);
-char	*my_putnbrulonglong(long long nb);
-char	*my_convertbase(char *snumber, int base);
-char	*my_memsetprintf(char *tempflag, int lenght);
-char	*my_revstrprintf(char *str);
-char	*prepare_tempflag(char *str, char *tempflag);
-char	flag_search(char c);
-int	my_printf(char *str, ...);
-int	my_strlenprintf(char *str);
-int	my_putcharprintf(char c);
-int	my_getnbrprintf(char *str);
-int	my_getnbrprintfU(char *str);
 
-#ENDIF /* !MY_H_ */
+#endif /* !MY_H_ */
