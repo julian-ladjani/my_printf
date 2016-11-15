@@ -1,11 +1,11 @@
 /*
 ** my_putnbr.c for my_putnbr in /home/julian-ladjani/delivery/PSU/my_printf/PSU_2021_my_printf_bootstrap
-** 
+**
 ** Made by julian ladjani
 ** Login   <julian.ladjani@epitech.net>
-** 
+**
 ** Started on  Mon Nov  7 15:49:41 2016 julian ladjani
-** Last update Sat Nov 12 21:27:39 2016 julian ladjani
+** Last update Feb Nov 14 17:26:33 2016 Julian Ladjani
 */
 
 #include "my.h"

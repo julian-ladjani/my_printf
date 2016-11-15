@@ -1,80 +1,96 @@
 /*
 ** my_printf.c for my_printf in /home/julian-ladjani/delivery/PSU/my_printf/PSU_2016_my_printf
-** 
+**
 ** Made by julian ladjani
 ** Login   <julian.ladjani@epitech.net>
-** 
+**
 ** Started on  Mon Nov  7 22:36:45 2016 julian ladjani
-** Last update Sun Nov 13 14:12:42 2016 julian ladjani
+** Last update Mar Nov 15 16:04:46 2016 Julian Ladjani
 */
 
 #include "my.h"
 
-t_flags		flags[] = {
-  {'d', print_int},
-  {'i', print_int},
-  {'s', print_str},
-  {'o', print_oct},
-  {'l', print_long},
-  {'x', print_hex},
-  {'X', print_hexM},
-  {'h', print_short},
-  {'c', print_char},
-  {'p', print_point},
-  {'n', print_number},
-  {'%', print_percent},
-  {'\0', NULL},
-};
-
-
 int		my_printf(char *str, ...)
 {
   va_list	ap;
-  char		*tempflag;
   int		count[1];
-  
+  t_flags	*flags;
+
+  flags = my_flags(flags);
   count[0] = 0;
+  if (flags == NULL)
+    return (count[0]);
   va_start(ap, str);
   while (*str != '\0')
     {
-      if (*str == '%')
+      if (*str == '%' && *str != '\0')
 	{
-	  str++;
-	  tempflag = malloc(my_strlenprintf(str) * sizeof(char));
-	  prepare_tempflag(str, tempflag);
-	  flags[flag_search(*str)].fonc(ap, tempflag, count);
-	  free(tempflag);
+	  if ((str = it_detect_per(flags, count, str, ap)) == NULL)
+	    return (count[0]);
 	}
-      else
+      else if (str != '\0')
 	count[0] += my_putcharprintf(*str);
-      str++;
+      if (str != '\0')
+	str++;
     }
   va_end(ap);
   return (count[0]);
 }
 
-char		*prepare_tempflag(char *str, char *tempflag)
+char		*it_detect_per(t_flags *flags, int *count, char *str, va_list ap)
 {
-  int		i;
+  char		*tempflag;
 
-  i = 0;
   str++;
-  while (flag_search(*str) == -1 && *str != '\0')
-    {
-      tempflag[++i] = *str;
-      str++;
-    }
+  if ((tempflag = malloc(my_strlenprintf(str) * sizeof(char))) == NULL)
+    return (NULL);
+  str = checkismod(str, tempflag);
+  if (*str != '\0')
+    flags[flag_search(*str)].fonc(ap, tempflag, count);
+  free(tempflag);
+  return (str);
 }
 
 int		flag_search(char c)
 {
   int		i;
+  t_flags	*flags;
+
+  flags = my_flags(flags);
+  if (flags == NULL)
+    return (13);
   i = 0;
-  while (flags[i].flag != '\0')
+  while (i < 13)
     {
       if (flags[i].flag == c)
 	return (i);
       i++;
     }
-  return (-1);
+  free (flags);
+  return (13);
+}
+
+char		*checkismod(char *str, char *tempflag)
+{
+  char		*modifier;
+  int		i;
+  int		j;
+
+  modifier = "012345789-+ .lh#I'LjZt\0";
+  i = 0;
+  j = 0;
+  while (modifier[i] != '\0')
+    {
+      if (*str == modifier[i] && *str != '\0')
+	{
+	  tempflag[j] = *str;
+	  i = 0;
+	  str++;
+	  j++;
+	}
+      else
+	i++;
+    }
+  tempflag[j] = *str;
+  return (str);
 }
