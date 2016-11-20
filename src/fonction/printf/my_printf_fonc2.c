@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sun Nov 13 13:32:20 2016 julian ladjani
-** Last update Mar Nov 15 13:31:50 2016 Julian Ladjani
+** Last update May Nov 17 13:13:04 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -16,6 +16,7 @@ void	print_point(va_list ap, char *flag, int *count)
 
   str = my_putnbrulonglong(va_arg(ap, long long));
   str = my_convertbase(str, 16, "0123456789abcdef");
+  edit_my_point(str, flag);
   count[0] += my_putstrprintf(str);
 }
 
@@ -27,6 +28,8 @@ void	print_wrong(va_list ap, char *flag, int *count)
 
 void	print_percent(va_list ap, char *flag, int *count)
 {
+  ap = ap;
+  flag = flag;
   count[0] += my_putcharprintf('%');
 }
 
@@ -37,7 +40,7 @@ void	print_S(va_list ap, char *flag, int *count)
   str = va_arg(ap, char *);
   while (*str != '\0')
     {
-      if (*str < 32 || *str > 127)
+      if (*str < 32)
 	print_Soct(*str, count);
       else
 	count[0] += my_putcharprintf(*str);

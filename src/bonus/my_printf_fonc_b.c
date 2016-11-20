@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sun Nov 13 13:09:50 2016 julian ladjani
-** Last update Mar Nov 15 17:30:34 2016 Julian Ladjani
+** Last update Jan Nov 20 00:47:24 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -14,6 +14,8 @@ void		print_number(va_list ap, char *flag, int *count)
 {
   int		*adress;
 
-  adress = va_arg(ap, long long);
-  *adress = count[0];
+  ap = ap;
+  flag = flag;
+  if ((adress = va_arg(ap, int *)) != NULL)
+    *adress = count[0];
 }

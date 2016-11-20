@@ -5,13 +5,14 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov  7 22:58:21 2016 julian ladjani
-** Last update Mar Nov 15 17:31:50 2016 Julian Ladjani
+** Last update Jul Nov 19 22:32:15 2016 Julian Ladjani
 */
 
 #include "my.h"
 
 void	print_int(va_list ap, char *flag, int *count)
 {
+  t_mod	moddata;
   char	*str;
   int	i;
 
@@ -24,7 +25,13 @@ void	print_int(va_list ap, char *flag, int *count)
     str = my_putnbrlong(va_arg(ap, long));
   else
     str = my_putnbrint(va_arg(ap, int));
-  edit_my_number(str, flag);
+    moddata = my_moddata();
+  if (*str == '-')
+    {
+      moddata.nbisneg = 1;
+      moddata.firstchar = '-';
+    }
+  str = edit_my_number(str, flag, moddata);
   count[0] += my_putstrprintf(str);
 }
 
@@ -60,5 +67,6 @@ void	print_str(va_list ap, char *flag, int *count)
 
 void	print_char(va_list ap, char *flag, int *count)
 {
+  flag = flag;
   count[0] += my_putcharprintf((char) va_arg(ap, int));
 }

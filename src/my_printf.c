@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov  7 22:36:45 2016 julian ladjani
-** Last update Mar Nov 15 16:04:46 2016 Julian Ladjani
+** Last update Jan Nov 20 01:32:28 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -16,7 +16,7 @@ int		my_printf(char *str, ...)
   int		count[1];
   t_flags	*flags;
 
-  flags = my_flags(flags);
+  flags = my_flags();
   count[0] = 0;
   if (flags == NULL)
     return (count[0]);
@@ -42,7 +42,7 @@ char		*it_detect_per(t_flags *flags, int *count, char *str, va_list ap)
   char		*tempflag;
 
   str++;
-  if ((tempflag = malloc(my_strlenprintf(str) * sizeof(char))) == NULL)
+  if ((tempflag = malloc((my_strlenprintf(str) + 1) * sizeof(char))) == NULL)
     return (NULL);
   str = checkismod(str, tempflag);
   if (*str != '\0')
@@ -56,7 +56,7 @@ int		flag_search(char c)
   int		i;
   t_flags	*flags;
 
-  flags = my_flags(flags);
+  flags = my_flags();
   if (flags == NULL)
     return (13);
   i = 0;
@@ -76,7 +76,7 @@ char		*checkismod(char *str, char *tempflag)
   int		i;
   int		j;
 
-  modifier = "012345789-+ .lh#I'LjZt\0";
+  modifier = "0123456789-+ .*lh#I'LjZt\0";
   i = 0;
   j = 0;
   while (modifier[i] != '\0')
@@ -92,5 +92,6 @@ char		*checkismod(char *str, char *tempflag)
 	i++;
     }
   tempflag[j] = *str;
+  tempflag[++j] = '\0';
   return (str);
 }
