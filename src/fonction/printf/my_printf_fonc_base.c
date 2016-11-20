@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sat Nov 12 17:51:57 2016 julian ladjani
-** Last update Jan Nov 20 18:44:40 2016 Julian Ladjani
+** Last update Jan Nov 20 19:01:49 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -43,7 +43,14 @@ void			print_hex(va_list ap, char *flag, int *count)
   char			*str;
   t_mod			moddata;
 
+  moddata = my_moddata();
+  moddata = parse_my_star(flag, moddata, ap);
+  moddata.type = 'x';
   str = my_putnbrulonglong(va_arg(ap, long long));
+  if (str[0] == '0')
+    moddata.nbisneg = 1;
+  else
+    moddata.lenght++;
   str = my_convertbase(str, 16, "0123456789abcdef");
   str = edit_my_base(str, flag, moddata);
   count[0] += my_putstrprintf(str);
@@ -54,7 +61,14 @@ void			print_hexm(va_list ap, char *flag, int *count)
   char			*str;
   t_mod			moddata;
 
+  moddata = my_moddata();
+  moddata = parse_my_star(flag, moddata, ap);
+  moddata.type = 'X';
   str = my_putnbrulonglong(va_arg(ap, long long));
+  if (str[0] == '0')
+    moddata.nbisneg = 1;
+  else
+    moddata.lenght++;
   str = my_convertbase(str, 16, "0123456789ABCDEF");
   str = edit_my_base(str, flag, moddata);
   count[0] += my_putstrprintf(str);
@@ -65,7 +79,14 @@ void			print_oct(va_list ap, char *flag, int *count)
   char			*str;
   t_mod			moddata;
 
+  moddata = my_moddata();
+  moddata = parse_my_star(flag, moddata, ap);
+  moddata.type = 'n';
   str = my_putnbrulonglong(va_arg(ap, long long));
+  if (str[0] == '0')
+    moddata.nbisneg = 1;
+  else
+    moddata.lenght++;
   str = my_convertbase(str, 8, "01234567");
   str = edit_my_base(str, flag, moddata);
   count[0] += my_putstrprintf(str);
@@ -76,7 +97,11 @@ void			print_bin(va_list ap, char *flag, int *count)
   char			*str;
   t_mod			moddata;
 
+  moddata = my_moddata();
+  moddata = parse_my_star(flag, moddata, ap);
+  moddata.type = 'n';
   str = my_putnbrulonglong(va_arg(ap, long long));
+  moddata.nbisneg = 1;
   str = my_convertbase(str, 2, "01");
   str = edit_my_base(str, flag, moddata);
   count[0] += my_putstrprintf(str);

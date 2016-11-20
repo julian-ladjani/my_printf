@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Mar Nov 15 02:19:16 2016 Julian Ladjani
-** Last update Jan Nov 20 18:18:33 2016 Julian Ladjani
+** Last update Jan Nov 20 19:10:55 2016 Julian Ladjani
 */
 
 #include <stdio.h>
@@ -79,7 +79,7 @@ int	main()
   my_printf("S%i%s%d\n", my_printf("ZERT%sDFG", NULL), NULL, 10);
   printf("pf %p\n", &val);
   my_printf("my %p\n", &val);
-  printf("pf %x\n", 1000);
-  my_printf("my %x\n", 1000);
+  printf("pf %#x\n", 1000);
+  my_printf("my %#o\n", 1000);
   printf("pf f\n");
 }

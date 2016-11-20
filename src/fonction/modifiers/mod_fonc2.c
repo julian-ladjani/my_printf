@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Apr Nov 16 13:18:36 2016 Julian Ladjani
-** Last update Jan Nov 20 18:38:10 2016 Julian Ladjani
+** Last update Jan Nov 20 19:08:06 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -14,6 +14,7 @@ t_mod		mod_diez(t_mod mod_data)
 {
   if (mod_data.nbisneg == 0)
     mod_data.diez = 1;
+  printf("diez parse %d\n", mod_data.diez);
 }
 
 t_mod		mod_zero(t_mod mod_data)

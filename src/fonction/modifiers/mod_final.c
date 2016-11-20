@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov 14 15:34:16 2016 julian ladjani
-** Last update Jan Nov 20 18:47:06 2016 Julian Ladjani
+** Last update Jan Nov 20 19:10:05 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -76,7 +76,28 @@ char	*edit_my_str(char *str, char *mod, t_mod moddata)
 
 char	*edit_my_base(char *number, char *mod, t_mod moddata)
 {
-  
+  moddata.lenght = my_strlenprintf(number);
+  moddata = parse_my_mod(mod, moddata);
+  printf("diez %d\n", moddata.diez);
+  if (moddata.lenght < moddata.nbmin)
+    number = my_realloc(number, moddata.nbmin);
+  while (moddata.lenght < moddata.nbmin)
+    {
+      if (moddata.zero == 1)
+	number = my_strcatprintfinv(number, '0');
+      else if (moddata.sub == 0)
+	number = my_strcatprintfinv(number, ' ');
+      else
+	number = my_strcatprintf(number, " ");
+      moddata.lenght++;
+    }
+  if (moddata.diez == 1)
+    {
+      if (moddata.type != 'n')
+	number = my_strcatprintfinv(number, moddata.type);
+      number = my_strcatprintfinv(number, '0');
+    }
+  return (number);
 }
 
 char	*edit_my_point(char *point, char *mod, t_mod moddata)

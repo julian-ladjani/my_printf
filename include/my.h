@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Wed Nov  9 13:23:16 2016 julian ladjani
-** Last update Jan Nov 20 18:41:50 2016 Julian Ladjani
+** Last update Jan Nov 20 19:04:25 2016 Julian Ladjani
 */
 
 #ifndef MY_H_
@@ -14,6 +14,8 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+#include <stdio.h>
 
 typedef struct	s_flags
 {
