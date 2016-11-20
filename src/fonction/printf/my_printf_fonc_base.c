@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sat Nov 12 17:51:57 2016 julian ladjani
-** Last update Jan Nov 20 19:01:49 2016 Julian Ladjani
+** Last update Jan Nov 20 19:43:23 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -19,11 +19,8 @@ char			*my_convertbase(char *snumber, int base, char *baseconf)
   lenght = 0;
   number = my_getnbrprintfu(snumber);
   number2 = number;
-  while (number2 != 0)
-    {
-      number2 /= 2;
-      lenght++;
-    }
+  while (number2 != 0 && lenght++ < lenght)
+    number2 /= 2;
   if ((snumber = malloc(lenght * sizeof(char *) + 3)) == NULL)
     return (NULL);
   lenght = 0;
@@ -33,6 +30,8 @@ char			*my_convertbase(char *snumber, int base, char *baseconf)
       number /= base;
       lenght++;
     }
+  if (lenght == 0)
+    snumber[lenght++] = baseconf[0];
   snumber[lenght] = '\0';
   my_revstrprintf(snumber);
   return (snumber);
@@ -47,7 +46,7 @@ void			print_hex(va_list ap, char *flag, int *count)
   moddata = parse_my_star(flag, moddata, ap);
   moddata.type = 'x';
   str = my_putnbrulonglong(va_arg(ap, long long));
-  if (str[0] == '0')
+  if (my_getnbrprintfu(str) == 0)
     moddata.nbisneg = 1;
   else
     moddata.lenght++;
@@ -65,7 +64,7 @@ void			print_hexm(va_list ap, char *flag, int *count)
   moddata = parse_my_star(flag, moddata, ap);
   moddata.type = 'X';
   str = my_putnbrulonglong(va_arg(ap, long long));
-  if (str[0] == '0')
+  if (my_getnbrprintfu(str) == 0)
     moddata.nbisneg = 1;
   else
     moddata.lenght++;
@@ -83,7 +82,7 @@ void			print_oct(va_list ap, char *flag, int *count)
   moddata = parse_my_star(flag, moddata, ap);
   moddata.type = 'n';
   str = my_putnbrulonglong(va_arg(ap, long long));
-  if (str[0] == '0')
+  if (my_getnbrprintfu(str) == 0)
     moddata.nbisneg = 1;
   else
     moddata.lenght++;
