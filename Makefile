@@ -5,7 +5,7 @@
 ## Login   <julian.ladjani@epitech.net>
 ##
 ## Started on  Mon Nov  7 16:31:28 2016 julian ladjani
-## Last update Jun Nov 18 18:47:09 2016 Julian Ladjani
+## Last update Jan Nov 20 03:35:11 2016 Julian Ladjani
 ##
 
 CC 		=	gcc
@@ -19,6 +19,7 @@ SRC		=	src/my_printf.c					\
 			src/fonction/usefull/usefull_foncs.c		\
 			src/fonction/usefull/usefull_foncs2.c		\
 			src/fonction/usefull/usefull_fonc3.c		\
+			src/fonction/usefull/usefull_foncs4.c		\
 			src/fonction/modifiers/mod_final.c		\
 			src/fonction/modifiers/mod_fonc1.c		\
 			src/fonction/modifiers/mod_fonc2.c		\

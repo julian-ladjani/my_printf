@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sat Nov 12 17:51:57 2016 julian ladjani
-** Last update Mar Nov 15 13:08:14 2016 Julian Ladjani
+** Last update Jan Nov 20 18:19:35 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -24,7 +24,7 @@ char			*my_convertbase(char *snumber, int base, char *baseconf)
       number2 /= 2;
       lenght++;
     }
-  if ((snumber = malloc(lenght * sizeof(char *) + 1)) == NULL)
+  if ((snumber = malloc(lenght * sizeof(char *) + 3)) == NULL)
     return (NULL);
   lenght = 0;
   while (number != 0)
@@ -33,6 +33,7 @@ char			*my_convertbase(char *snumber, int base, char *baseconf)
       number /= base;
       lenght++;
     }
+  snumber[lenght] = '\0';
   my_revstrprintf(snumber);
   return (snumber);
 }
@@ -40,39 +41,43 @@ char			*my_convertbase(char *snumber, int base, char *baseconf)
 void			print_hex(va_list ap, char *flag, int *count)
 {
   char			*str;
+  t_mod			moddata;
 
   str = my_putnbrulonglong(va_arg(ap, long long));
-  my_convertbase(str, 16, "0123456789abcdef");
-  edit_my_base(str, flag);
+  str = my_convertbase(str, 16, "0123456789abcdef");
+  str = edit_my_base(str, flag, moddata);
   count[0] += my_putstrprintf(str);
 }
 
 void			print_hexM(va_list ap, char *flag, int *count)
 {
   char			*str;
+  t_mod			moddata;
 
   str = my_putnbrulonglong(va_arg(ap, long long));
-  my_convertbase(str, 16, "0123456789ABCDEF");
-  edit_my_base(str, flag);
+  str = my_convertbase(str, 16, "0123456789ABCDEF");
+  str = edit_my_base(str, flag, moddata);
   count[0] += my_putstrprintf(str);
 }
 
 void			print_oct(va_list ap, char *flag, int *count)
 {
   char			*str;
+  t_mod			moddata;
 
   str = my_putnbrulonglong(va_arg(ap, long long));
-  my_convertbase(str, 8, "01234567");
-  edit_my_base(str, flag);
+  str = my_convertbase(str, 8, "01234567");
+  str = edit_my_base(str, flag, moddata);
   count[0] += my_putstrprintf(str);
 }
 
 void			print_bin(va_list ap, char *flag, int *count)
 {
   char			*str;
+  t_mod			moddata;
 
   str = my_putnbrulonglong(va_arg(ap, long long));
-  my_convertbase(str, 2, "01");
-  edit_my_base(str, flag);
+  str = my_convertbase(str, 2, "01");
+  str = edit_my_base(str, flag, moddata);
   count[0] += my_putstrprintf(str);
 }

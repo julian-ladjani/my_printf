@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov  7 15:49:41 2016 julian ladjani
-** Last update Mar Nov 15 13:22:27 2016 Julian Ladjani
+** Last update Jan Nov 20 18:31:05 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -23,6 +23,7 @@ char	*my_putnbruint(unsigned int nb)
       result[++i] = ((nb % 10) + 48);
       nb /= 10;
     }
+  result[++i] = '\0';
   my_revstrprintf(result);
   return (result);
 }
@@ -40,6 +41,7 @@ char	*my_putnbrulong(unsigned long nb)
       result[++i] = ((nb % 10) + 48);
       nb /= 10;
     }
+  result[++i] = '\0';
   my_revstrprintf(result);
   return (result);
 }
@@ -57,6 +59,25 @@ char	*my_putnbrulonglong(unsigned long long nb)
       result[++i] = ((nb % 10) + 48);
       nb /= 10;
     }
+  result[++i] = '\0';
+  my_revstrprintf(result);
+  return (result);
+}
+
+char	*my_putnbrusize(size_t nb)
+{
+  int	i;
+  char	*result;
+
+  if ((result = malloc(sizeof(nb) * sizeof(char) + 10)) == NULL)
+    return ("(NULL)");
+  i = -1;
+  while (nb > 0)
+    {
+      result[++i] = ((nb % 10) + 48);
+      nb /= 10;
+    }
+  result[++i] = '\0';
   my_revstrprintf(result);
   return (result);
 }

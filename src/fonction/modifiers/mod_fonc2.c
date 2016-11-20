@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Apr Nov 16 13:18:36 2016 Julian Ladjani
-** Last update Jan Nov 20 02:06:56 2016 Julian Ladjani
+** Last update Jan Nov 20 16:48:27 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -30,5 +30,11 @@ t_mod		mod_space(t_mod mod_data)
       mod_data.space = 1;
       mod_data.firstchar = ' ';
     }
+  return (mod_data);
+}
+
+t_mod		mod_dot(t_mod mod_data)
+{
+  mod_data.dot = 1;
   return (mod_data);
 }

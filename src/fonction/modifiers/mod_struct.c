@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Mar Nov 15 20:00:29 2016 Julian Ladjani
-** Last update Jul Nov 19 22:16:24 2016 Julian Ladjani
+** Last update Jan Nov 20 03:02:55 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -26,6 +26,7 @@ t_mod		my_moddata()
   mod_data.zero = 0;
   mod_data.dot = 0;
   mod_data.firstchar = 'n';
+  mod_data.type = 'n';
   return (mod_data);
 }
 

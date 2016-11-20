@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov 14 14:20:05 2016 julian ladjani
-** Last update Apr Nov 16 23:05:59 2016 Julian Ladjani
+** Last update Jan Nov 20 16:33:09 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -13,6 +13,7 @@
 t_flags		*my_flags()
 {
   t_flags		*flags;
+
   if ((flags = malloc(15 * sizeof(t_flags))) == NULL)
     return (NULL);
   my_setflags(flags);

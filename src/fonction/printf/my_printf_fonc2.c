@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sun Nov 13 13:32:20 2016 julian ladjani
-** Last update May Nov 17 13:13:04 2016 Julian Ladjani
+** Last update Jan Nov 20 18:29:25 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -13,15 +13,28 @@
 void	print_point(va_list ap, char *flag, int *count)
 {
   char	*str;
+  t_mod	moddata;
+  int	adress;
 
-  str = my_putnbrulonglong(va_arg(ap, long long));
-  str = my_convertbase(str, 16, "0123456789abcdef");
-  edit_my_point(str, flag);
+  moddata = my_moddata();
+  moddata = parse_my_star(flag, moddata, ap);
+  str = my_putnbrusize(va_arg(ap, size_t));
+  if (*str == '\0')
+    str = "(nil)";
+  else
+    {
+      str = my_convertbase(str, 16, "0123456789abcdef");
+      str = my_strcatprintfinv(str, 'x');
+      str = my_strcatprintfinv(str, '0');
+      str = edit_my_point(str, flag, moddata);
+    }
   count[0] += my_putstrprintf(str);
 }
 
 void	print_wrong(va_list ap, char *flag, int *count)
 {
+  flag = flag;
+  ap = ap;
   count[0] += my_putcharprintf('%');
   count[0] += my_putstrprintf(flag);
 }

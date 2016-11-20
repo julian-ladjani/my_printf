@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Apr Nov 16 13:18:27 2016 Julian Ladjani
-** Last update Jan Nov 20 02:06:48 2016 Julian Ladjani
+** Last update Jan Nov 20 16:52:39 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -35,6 +35,29 @@ t_mod		parse_my_mod(char *var, t_mod mod_data)
   return (mod_data);
 }
 
+t_mod		parse_my_star(char *var, t_mod mod_data, va_list ap)
+{
+  t_modinit	*mod;
+  int		i;
+
+  i = 0;
+  mod = my_mod(mod);
+  while (var[i + 1] != '\0')
+    {
+      if (var[i] == '*')
+	{
+	  if (i != 0 && var[i - 1] == '.' && mod_data.nbmax == 0)
+	    mod_data.nbmax = va_arg(ap, int);
+	  else if (mod_data.nbmin == 0)
+	    mod_data.nbmin = va_arg(ap, int);
+	  while (var[i] >= '0' && var[i] <= '9')
+	    i++;
+	}
+      i++;
+    }
+  return (mod_data);
+}
+
 t_mod		mod_add(t_mod mod_data)
 {
   mod_data.space = 0;
@@ -56,11 +79,5 @@ t_mod		mod_sub(t_mod mod_data)
 t_mod		mod_star(t_mod mod_data)
 {
   mod_data.star = 1;
-  return (mod_data);
-}
-
-t_mod		mod_dot(t_mod mod_data)
-{
-  mod_data.dot = 1;
   return (mod_data);
 }
