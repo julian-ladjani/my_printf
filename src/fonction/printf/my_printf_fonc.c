@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov  7 22:58:21 2016 julian ladjani
-** Last update Jan Nov 20 17:40:56 2016 Julian Ladjani
+** Last update Jan Nov 20 18:40:28 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -69,7 +69,7 @@ void	print_str(va_list ap, char *flag, int *count)
   moddata = parse_my_star(flag, moddata, ap);
   str = va_arg(ap, char *);
   if (str == NULL)
-      str = "(null)";
+    str = "(null)";
   else
     {
       if ((str2 = malloc((my_strlenprintf(str) + 1) * sizeof(char))) == NULL)

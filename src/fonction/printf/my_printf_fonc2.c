@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sun Nov 13 13:32:20 2016 julian ladjani
-** Last update Jan Nov 20 18:29:25 2016 Julian Ladjani
+** Last update Jan Nov 20 18:40:47 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -46,7 +46,7 @@ void	print_percent(va_list ap, char *flag, int *count)
   count[0] += my_putcharprintf('%');
 }
 
-void	print_S(va_list ap, char *flag, int *count)
+void	print_s(va_list ap, char *flag, int *count)
 {
   char	*str;
 
@@ -54,14 +54,14 @@ void	print_S(va_list ap, char *flag, int *count)
   while (*str != '\0')
     {
       if (*str < 32)
-	print_Soct(*str, count);
+	print_soct(*str, count);
       else
 	count[0] += my_putcharprintf(*str);
       str++;
     }
 }
 
-void	print_Soct(char c, int *count)
+void	print_soct(char c, int *count)
 {
   char	*str;
   int	i;

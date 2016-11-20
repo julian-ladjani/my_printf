@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Wed Nov  9 13:23:16 2016 julian ladjani
-** Last update Jan Nov 20 18:14:21 2016 Julian Ladjani
+** Last update Jan Nov 20 18:41:50 2016 Julian Ladjani
 */
 
 #ifndef MY_H_
@@ -14,8 +14,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-
-#include <stdio.h>
 
 typedef struct	s_flags
 {
@@ -71,7 +69,7 @@ int		my_printf(char *str, ...);
 int		my_strlenprintf(char *str);
 int		my_putcharprintf(char c);
 int		my_getnbrprintf(char *str);
-int		my_getnbrprintfU(char *str);
+int		my_getnbrprintfu(char *str);
 int		my_putstrprintf(char *str);
 int		my_putcharprintf(char c);
 int		mod_search(char c);
@@ -80,14 +78,14 @@ void		print_str(va_list ap, char *flag, int *count);
 void		print_char(va_list ap, char *flag, int *count);
 void		print_int(va_list ap, char *flag, int *count);
 void		print_uint(va_list ap, char *flag, int *count);
-void		print_S(va_list ap, char *flag, int *count);
+void		print_s(va_list ap, char *flag, int *count);
 void		print_bin(va_list ap, char *flag, int *count);
 void		print_hex(va_list ap, char *flag, int *count);
-void		print_hexM(va_list ap, char *flag, int *count);
+void		print_hexm(va_list ap, char *flag, int *count);
 void		print_oct(va_list ap, char *flag, int *count);
 void		print_wrong(va_list ap, char *flag, int *count);
-void		print_S(va_list ap, char *flag, int *count);
-void		print_Soct(char c, int *count);
+void		print_s(va_list ap, char *flag, int *count);
+void		print_soct(char c, int *count);
 void		print_point(va_list ap, char *flag, int *count);
 void		print_percent(va_list ap, char *flag, int *count);
 void		print_number(va_list ap, char *flag, int *count);

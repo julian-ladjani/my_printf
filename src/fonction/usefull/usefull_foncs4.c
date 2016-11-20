@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Jan Nov 20 03:10:15 2016 Julian Ladjani
-** Last update Jan Nov 20 03:37:19 2016 Julian Ladjani
+** Last update Jan Nov 20 18:43:42 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -33,6 +33,6 @@ char	*reduce_mypfstring(char *str, int n)
     newstr = "(null)";
   else
     my_strncpyprintf(newstr, str, n);
-  free (str);
+  free(str);
   return (newstr);
 }

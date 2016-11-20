@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sat Nov 12 18:23:56 2016 julian ladjani
-** Last update Feb Nov 14 20:53:28 2016 Julian Ladjani
+** Last update Jan Nov 20 18:43:33 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -38,7 +38,7 @@ int			my_getnbrprintf(char *str)
   return (digit);
 }
 
-int			my_getnbrprintfU(char *str)
+int			my_getnbrprintfu(char *str)
 {
   unsigned long long	digit;
   int			counter;

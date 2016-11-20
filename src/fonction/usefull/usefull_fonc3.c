@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Apr Nov 16 17:43:09 2016 Julian Ladjani
-** Last update Jan Nov 20 16:26:56 2016 Julian Ladjani
+** Last update Jan Nov 20 18:43:21 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -20,7 +20,7 @@ char	*my_realloc(char *str, int lenght)
   if ((strnew = malloc(lenght)) == NULL)
     return (NULL);
   my_strcpyprintf(strnew, str);
-  free (str);
+  free(str);
   return (strnew);
 }
 

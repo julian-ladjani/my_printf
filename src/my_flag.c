@@ -5,14 +5,14 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov 14 14:20:05 2016 julian ladjani
-** Last update Jan Nov 20 16:33:09 2016 Julian Ladjani
+** Last update Jan Nov 20 18:44:57 2016 Julian Ladjani
 */
 
 #include "my.h"
 
 t_flags		*my_flags()
 {
-  t_flags		*flags;
+  t_flags	*flags;
 
   if ((flags = malloc(15 * sizeof(t_flags))) == NULL)
     return (NULL);
@@ -47,13 +47,13 @@ t_flags		*my_setfoncs(t_flags *flags)
   flags[2].fonc = &print_str;
   flags[3].fonc = &print_oct;
   flags[4].fonc = &print_hex;
-  flags[5].fonc = &print_hexM;
+  flags[5].fonc = &print_hexm;
   flags[6].fonc = &print_char;
   flags[7].fonc = &print_point;
   flags[8].fonc = &print_number;
   flags[9].fonc = &print_percent;
   flags[10].fonc = &print_uint;
-  flags[11].fonc = &print_S;
+  flags[11].fonc = &print_s;
   flags[12].fonc = &print_bin;
   flags[13].fonc = &print_wrong;
   return (flags);

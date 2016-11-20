@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov  7 22:36:45 2016 julian ladjani
-** Last update Jan Nov 20 01:32:28 2016 Julian Ladjani
+** Last update Jan Nov 20 18:44:01 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -66,7 +66,7 @@ int		flag_search(char c)
 	return (i);
       i++;
     }
-  free (flags);
+  free(flags);
   return (13);
 }
 

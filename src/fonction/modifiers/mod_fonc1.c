@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Apr Nov 16 13:18:27 2016 Julian Ladjani
-** Last update Jan Nov 20 16:52:39 2016 Julian Ladjani
+** Last update Jan Nov 20 18:45:19 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -22,9 +22,9 @@ t_mod		parse_my_mod(char *var, t_mod mod_data)
       if (var[i] > '0' && var[i] <= '9')
 	{
 	  if (i != 0 && var[i - 1] == '.' && mod_data.nbmax == 0)
-	    mod_data.nbmax = my_getnbrprintfU(var + i);
+	    mod_data.nbmax = my_getnbrprintfu(var + i);
 	  else if (mod_data.nbmin == 0)
-	    mod_data.nbmin = my_getnbrprintfU(var + i);
+	    mod_data.nbmin = my_getnbrprintfu(var + i);
 	  while (var[i] >= '0' && var[i] <= '9')
 	    i++;
 	}

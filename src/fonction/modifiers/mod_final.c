@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov 14 15:34:16 2016 julian ladjani
-** Last update Jan Nov 20 17:14:49 2016 Julian Ladjani
+** Last update Jan Nov 20 18:47:06 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -76,7 +76,7 @@ char	*edit_my_str(char *str, char *mod, t_mod moddata)
 
 char	*edit_my_base(char *number, char *mod, t_mod moddata)
 {
-
+  
 }
 
 char	*edit_my_point(char *point, char *mod, t_mod moddata)

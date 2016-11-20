@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Sat Nov 12 17:51:57 2016 julian ladjani
-** Last update Jan Nov 20 18:19:35 2016 Julian Ladjani
+** Last update Jan Nov 20 18:44:40 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -17,7 +17,7 @@ char			*my_convertbase(char *snumber, int base, char *baseconf)
   int			lenght;
 
   lenght = 0;
-  number = my_getnbrprintfU(snumber);
+  number = my_getnbrprintfu(snumber);
   number2 = number;
   while (number2 != 0)
     {
@@ -49,7 +49,7 @@ void			print_hex(va_list ap, char *flag, int *count)
   count[0] += my_putstrprintf(str);
 }
 
-void			print_hexM(va_list ap, char *flag, int *count)
+void			print_hexm(va_list ap, char *flag, int *count)
 {
   char			*str;
   t_mod			moddata;
