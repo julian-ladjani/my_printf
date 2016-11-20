@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Mon Nov  7 22:58:21 2016 julian ladjani
-** Last update Jul Nov 19 22:32:15 2016 Julian Ladjani
+** Last update Jan Nov 20 02:48:53 2016 Julian Ladjani
 */
 
 #include "my.h"
@@ -25,7 +25,7 @@ void	print_int(va_list ap, char *flag, int *count)
     str = my_putnbrlong(va_arg(ap, long));
   else
     str = my_putnbrint(va_arg(ap, int));
-    moddata = my_moddata();
+  moddata = my_moddata();
   if (*str == '-')
     {
       moddata.nbisneg = 1;
@@ -37,6 +37,7 @@ void	print_int(va_list ap, char *flag, int *count)
 
 void	print_uint(va_list ap, char *flag, int *count)
 {
+  t_mod	moddata;
   char	*str;
   int	i;
 
@@ -49,7 +50,10 @@ void	print_uint(va_list ap, char *flag, int *count)
     str = my_putnbrulong(va_arg(ap, unsigned long));
   else
     str = my_putnbruint(va_arg(ap, unsigned int));
-  edit_my_unumber(str, flag);
+  moddata = my_moddata();
+  if (*str == '0')
+    moddata.nbisneg = 1;
+  str = edit_my_unumber(str, flag, moddata);
   count[0] += my_putstrprintf(str);
 }
 

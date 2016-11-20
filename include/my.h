@@ -5,7 +5,7 @@
 ** Login   <julian.ladjani@epitech.net>
 **
 ** Started on  Wed Nov  9 13:23:16 2016 julian ladjani
-** Last update Jul Nov 19 18:34:59 2016 Julian Ladjani
+** Last update Jan Nov 20 02:15:23 2016 Julian Ladjani
 */
 
 #ifndef MY_H_
@@ -91,7 +91,7 @@ void		print_number(va_list ap, char *flag, int *count);
 char		*my_strcatprintf(char *dest, char *src);
 char		*my_strcatprintfinv(char *dest, char c);
 char		*edit_my_number(char *number, char *mod, t_mod moddata);
-char		*edit_my_unumber(char *number, char *mod);
+char		*edit_my_unumber(char *number, char *mod, t_mod moddata);
 char		*edit_my_str(char *str, char *mod);
 char		*edit_my_base(char *number, char *mod);
 char		*edit_my_point(char *point, char *mod);

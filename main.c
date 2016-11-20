@@ -5,7 +5,7 @@
 ** Login  <julian.ladjani@epitech.eu>
 **
 ** Started on  Mar Nov 15 02:19:16 2016 Julian Ladjani
-** Last update Jan Nov 20 01:52:41 2016 Julian Ladjani
+** Last update Jan Nov 20 02:34:11 2016 Julian Ladjani
 */
 
 #include <stdio.h>
@@ -19,6 +19,7 @@ int	main()
   char	*val;
   int	INT_MAX = 20000000;
   int	INT_MIN = 0;
+  int		*n;
   int UINT_MAX = 20000000;
   int LLONG_MAX = 20000000;
   int ULLONG_MAX = 20000000;
@@ -28,7 +29,8 @@ int	main()
   c = '$';
   printf("==============PRINTF==============\n");
     my_printf("%d\n", my_printf("%-+#.6hhdf%s\n&", c, str));
-
+  printf("%20.40s|\n", "azer");
+    printf("%5.3s|\n", "azer");
   printf("%s\n%s\n", "test", "test2");
   printf("%+09d%s\n", 123456, "+09d");
   printf("%+9d%s\n", 123456, "+9d");
@@ -164,49 +166,4 @@ my_printf("%d\n", my_printf("% +.16llX:%0# +32.0llX%s$\n", LLONG_MIN, LLONG_MAX,
   my_printf("%d\n", my_printf("%-#6.2p&", a));
   my_printf("%d\n", my_printf("%-42.52p&", a));
   my_printf("%d\n", my_printf("%32.24p&", a));
-
-  my_printf("[%.0c]\n", c);
-  my_printf("[%-010c]\n", c);
-  my_printf("[%-0.3c]\n", c);
-  my_printf("[%-010.3c]\n", c);
-  my_printf("[%.0c]\n", c);
-
-  my_printf("[%s]\n", str);
-  my_printf("[%.0s]\n", str);
-  my_printf("[%10.4s]\n", str);
-  my_printf("[%0.0s]\n", str);
-  my_printf("[%.1s]\n", str);
-
-  my_printf("test2\n");
-  //printf("%d\n", printf("%-#6.2hhd|%s\n&", c), str);
-  my_printf("%d\n", my_printf("%-#6.2hhd|%s\n&", c, str), str);
-  my_printf("%d\n", my_printf("%-4.5hhd|%s", c, str));
-  my_printf("test3\n");
-  my_printf("\nShort and long strings tests\n");
-  my_printf("%d\n", my_printf("%-+#.6hhs|%s\n&", str, str));
-  my_printf("%d\n", my_printf("%-#6.2lls|%hs\n&", str, NULL), str);
-  my_printf("test22\n");
-  my_printf("%d\n", my_printf("%-4.5lls|%ls", str, str));
-
-  char str2[] = "jdfhjkh";
-  str2[2] = 12;
-  my_printf("test345\n");
-  my_printf("%d\n", my_printf("%-+#.6hhS|%S\n", str2, str2));
-  my_printf("%d\n", my_printf("%-#6.2hhS|%S\n", str2, str2));
-  my_printf("%d\n", my_printf("%-4.5hhS|%S", str2, str2));
-
-  my_printf("%d\n", my_printf("%-+#.0hhS|%S\n", str2, str2));
-  my_printf("%d\n", my_printf("%-#6.0hhS|%S\n", str2, str2));
-  my_printf("%d\n", my_printf("%-0.0hhS|%S", str2, str2));
-
-  my_printf("CHAR ATACK\n");
-  c = 0;
-  my_printf("[%.0c]\n", c);
-  c = 127;
-  my_printf("[%-010c]\n", c);
-  my_printf("[%-0.3c]\n", c);
-  c = '@';
-  my_printf("[%-010.3c]\n", c);
-  my_printf("[%.0c]\n", c);
-
 }
