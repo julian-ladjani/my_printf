@@ -1,4 +1,0 @@
-make re --silent
-gcc main.c -L . -lmy
-./a.out
-make fclean --silent
